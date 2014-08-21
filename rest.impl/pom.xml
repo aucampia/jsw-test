@@ -12,8 +12,8 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>com.github.aucampia.jsw.test</groupId>
 	<artifactId>jsw.test.rest.impl</artifactId>
+	<packaging>bundle</packaging>
 
 	<properties>
 	</properties>

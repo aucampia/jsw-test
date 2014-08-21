@@ -50,6 +50,33 @@ ln -s ~/software/installations/apache-servicemix-5.1.1 ~/software/installations/
 ----
 
 ----
+----
+
+----
+features:addurl mvn:com.github.aucampia.jsw.test/jsw.test.osgi.asm/1.0-SNAPSHOT/xml/features
+features:refreshurl mvn:com.github.aucampia.jsw.test/jsw.test.osgi.asm/1.0-SNAPSHOT/xml/features
+features:list -o | grep com.github.aucampia
+features:install -v com.github.aucampia.jsw.test.jsw.test.osgi.asm
+
+
+osgi:update com.github.aucampia.jsw.test.jsw.test.logic.intf/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.logic.impl/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.rest.intf/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.rest.impl/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
+
+osgi:refresh
+
+osgi:restart com.github.aucampia.jsw.test.jsw.test.logic.intf/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.logic.impl/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.intf/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.impl/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
+
+osgi:list -s -t 0
+----
+
+----
 cat ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,} | view -
 
 tail -F ~/software/installations/apache-servicemix/data/log/servicemix.log
