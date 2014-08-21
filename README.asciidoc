@@ -1,0 +1,33 @@
+= jsw-test
+
+Some test code for Jboss Switchyard
+
+["plantuml", "jsw-test-class", "png"]
+----
+
+interface TestServiceRestInterface
+{
+	JSON info( String id )
+}
+
+class TestServiceRestInterface::Info
+{
+	String name
+	String gender
+
+	String getName()
+	void setName( String name )
+
+	String getGender()
+	void setGender( String gender )
+}
+
+interface TestServiceRestInterface
+{
+	Info info( String id )
+}
+
+TestServiceRest --|> TestServiceRestInterface
+TestServiceLogic --|> TestServiceLogicInterface
+TestServiceRest o-- TestServiceLogic
+----
