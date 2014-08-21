@@ -74,6 +74,12 @@ osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.comp/1.0.0.SNAPSHOT
 osgi:restart com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
 
 osgi:list -s -t 0
+
+osgi:uninstall com.github.aucampia.jsw.test.jsw.test.logic.intf/1.0.0.SNAPSHOT
+osgi:uninstall com.github.aucampia.jsw.test.jsw.test.logic.comp/1.0.0.SNAPSHOT
+osgi:uninstall com.github.aucampia.jsw.test.jsw.test.rest.intf/1.0.0.SNAPSHOT
+osgi:uninstall com.github.aucampia.jsw.test.jsw.test.rest.comp/1.0.0.SNAPSHOT
+osgi:uninstall com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
 ----
 
 ----
@@ -82,6 +88,14 @@ cat ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,} |
 tail -F ~/software/installations/apache-servicemix/data/log/servicemix.log
 tail -F ~/software/installations/apache-servicemix/data/karaf.out
 tail -F ~/software/installations/apache-servicemix/data/log/wrapper.log
+
+cat ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,} | grep TestService
+
+egrep -e ERROR -e WARN ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,}
+----
+
+----
+curl 'http://127.0.0.1:10901/jsw-test.rest.jaxrs/test/info/1234'
 ----
 
 == Notes

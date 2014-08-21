@@ -5,6 +5,9 @@
 # vim: ts=4 sw=4:
 -->
 	<feature name="${groupId}.${artifactId}" description="${groupId}.${artifactId}" version="${version}">
+
+		<feature version="${dependency.org.apache.servicemix.version}">swagger</feature>
+
 		<bundle dependency='true'>mvn:org.codehaus.jackson/jackson-core-asl/${dependency.org.codehaus.jackson.version}</bundle>
 		<bundle dependency='true'>mvn:org.codehaus.jackson/jackson-mapper-asl/${dependency.org.codehaus.jackson.version}</bundle>
 

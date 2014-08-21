@@ -15,6 +15,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<dependency.org.codehaus.jackson.version>1.9.13</dependency.org.codehaus.jackson.version>
+		<dependency.org.apache.servicemix.version>5.1.1</dependency.org.apache.servicemix.version>
 	</properties>
 
 	<modules>
