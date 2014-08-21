@@ -10,7 +10,7 @@ interface TestServiceRestInterface
 	JSON info( String id )
 }
 
-class TestServiceRestInterface::Info
+class TestServiceRestInterface.Info
 {
 	String name
 	String gender
@@ -30,4 +30,5 @@ interface TestServiceRestInterface
 TestServiceRest --|> TestServiceRestInterface
 TestServiceLogic --|> TestServiceLogicInterface
 TestServiceRest o-- TestServiceLogic
+
 ----
