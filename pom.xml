@@ -12,17 +12,17 @@
 	<packaging>pom</packaging>
 
 
-    <properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+		<dependency.org.codehaus.jackson.version>1.9.13</dependency.org.codehaus.jackson.version>
+	</properties>
 
 	<modules>
 		<module>rest.intf</module>
 		<module>logic.intf</module>
 		<module>rest.impl</module>
-		<!--
 		<module>logic.impl</module>
-		-->
+		<module>osgi.asm</module>
 	</modules>
 
 	<scm>

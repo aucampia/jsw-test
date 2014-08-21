@@ -1,0 +1,76 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:jaxrs="http://cxf.apache.org/blueprint/jaxrs"
+		xmlns:sec="http://cxf.apache.org/configuration/security"
+		xmlns:http="http://cxf.apache.org/transports/http/configuration"
+		xmlns:httpj="http://cxf.apache.org/transports/http-jetty/configuration"
+		xmlns:cxf="http://cxf.apache.org/blueprint/core"
+		xsi:schemaLocation="
+		http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+		http://cxf.apache.org/blueprint/jaxrs http://cxf.apache.org/schemas/blueprint/jaxrs.xsd
+		http://cxf.apache.org/configuration/security http://cxf.apache.org/schemas/configuration/security.xsd
+		http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd
+		http://cxf.apache.org/transports/http-jetty/configuration http://cxf.apache.org/schemas/configuration/http-jetty.xsd
+		http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
+		">
+
+	<bean
+		id="jsw-test.logic.bean"
+		activation="eager"
+		class="com.github.aucampia.jsw.test.logic.impl.TestServiceLogic"
+		init-method="init"
+		destroy-method="destroy">
+	</bean>
+
+	<bean
+		id="jsw-test.rest.bean"
+		activation="eager"
+		class="com.github.aucampia.jsw.test.rest.impl.TestServiceRest"
+		init-method="init"
+		destroy-method="destroy">
+		<property name="logic" ref="jsw-test.logic.bean"/>
+	</bean>
+	
+	<jaxrs:server id="jsw-test.rest.jaxrs" address="http://0.0.0.0:10901/jsw-test.rest.jaxrs" depends-on="jsw-test.rest.httpj">
+		<jaxrs:serviceBeans>
+			<ref component-id="jsw-test.rest.bean"/>
+			<ref component-id="swaggerResourceJSON"/>
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<ref component-id="resourceWriter" />
+			<ref component-id="apiWriter" />
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<httpj:engine-factory id="jsw-test.rest.httpj" bus="cxf">
+		<httpj:engine host="0.0.0.0" port="10901">
+			<httpj:threadingParameters minThreads="128" maxThreads="1024"/>
+			<httpj:connector>
+				<bean class="org.eclipse.jetty.server.bio.SocketConnector">
+					 <property name="port" value="10901" />
+				</bean>
+			</httpj:connector>
+			<httpj:handlers>
+				<bean class="org.eclipse.jetty.server.handler.DefaultHandler"/>
+			</httpj:handlers>
+			<httpj:sessionSupport>true</httpj:sessionSupport>
+		</httpj:engine>
+	</httpj:engine-factory>
+
+	<bean id="swaggerResourceJSON" class="com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON" />
+	<bean id="resourceWriter" class="com.wordnik.swagger.jaxrs.listing.ResourceListingProvider" />
+	<bean id="apiWriter" class="com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider" />
+
+	<bean id="swaggerConfig" class="com.wordnik.swagger.jaxrs.config.BeanConfig">
+		<property name="resourcePackage" value="com.github.aucampia.jsw.test.rest.intf"/>
+		<property name="version" value="1.0.0"/>
+		<property name="basePath" value="http://localhost:10901/cxf/jsw-test.rest"/>
+		<property name="title" value="jsw-test.rest"/>
+		<property name="description" value="jsw-test.rest"/>
+		<property name="contact" value="support@concurrent.co.za"/>
+		<property name="license" value="Proprietary"/>
+		<property name="licenseUrl" value="http://www.concurrent.co.za"/>
+		<property name="scan" value="true"/>
+	</bean>
+		
+</blueprint>

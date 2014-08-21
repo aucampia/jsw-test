@@ -12,9 +12,13 @@ import org.codehaus.jackson.map.SerializationConfig;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class TestServiceRest
 	implements TestServiceRestInterface
 {
+	private static final Logger LOG = LoggerFactory.getLogger( TestServiceRest.class );
 
 	private TestServiceLogicInterface logic;
 	public TestServiceLogicInterface getLogic()
@@ -35,5 +39,15 @@ public class TestServiceRest
 		objectMapper.configure( SerializationConfig.Feature.INDENT_OUTPUT, true );
 		String json = objectMapper.writeValueAsString( info );
 		return Response.ok( json, MediaType.APPLICATION_JSON ).build();
+	}
+
+	public void init()
+	{
+		LOG.info( "jsw.test.logic.impl.TestServiceRest.init: ..." );
+	}
+
+	public void destroy()
+	{
+		LOG.info( "jsw.test.logic.impl.TestServiceRest.destroy: ..." );
 	}
 }

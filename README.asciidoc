@@ -32,3 +32,27 @@ TestServiceLogic --|> TestServiceLogicInterface
 TestServiceRest o-- TestServiceLogic
 
 ----
+
+== Resources
+
+* link:https://github.com/apache/servicemix/tree/master/examples/cxf/cxf-jaxrs-blueprint[]
+
+== ServiceMix
+
+----
+mkdir -p ~/software/sources/apache.org/servicemix/
+mkdir -p ~/software/installations/
+( cd ~/software/sources/apache.org/servicemix/ && wget -c http://apache.mirror.ac.za/servicemix/servicemix-5/5.1.1/apache-servicemix-5.1.1.zip )
+rm -r ~/software/installations/apache-servicemix-5.1.1
+unzip ~/software/sources/apache.org/servicemix/apache-servicemix-5.1.1.zip -d ~/software/installations/
+rm -f ~/software/installations/apache-servicemix
+ln -s ~/software/installations/apache-servicemix-5.1.1 ~/software/installations/apache-servicemix
+----
+
+----
+cat ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,} | view -
+
+tail -F ~/software/installations/apache-servicemix/data/log/servicemix.log
+tail -F ~/software/installations/apache-servicemix/data/karaf.out
+tail -F ~/software/installations/apache-servicemix/data/log/wrapper.log
+----

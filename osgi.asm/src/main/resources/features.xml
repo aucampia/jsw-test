@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<features>
+<!--
+# vim: set noexpandtab:
+# vim: ts=4 sw=4:
+-->
+	<feature name="${groupId}.${artifactId}" description="${groupId}.${artifactId}" version="${version}">
+		<bundle dependency='true'>mvn:org.codehaus.jackson/jackson-core-asl/${dependency.org.codehaus.jackson.version}</bundle>
+		<bundle dependency='true'>mvn:org.codehaus.jackson/jackson-mapper-asl/${dependency.org.codehaus.jackson.version}</bundle>
+
+		<bundle dependency="true">mvn:${groupId}/jsw.test.logic.intf/${version}/jar</bundle>
+		<bundle dependency="true">mvn:${groupId}/jsw.test.rest.intf/${version}/jar</bundle>
+
+		<bundle dependency="true">mvn:${groupId}/jsw.test.logic.impl/${version}/jar</bundle>
+		<bundle dependency="true">mvn:${groupId}/jsw.test.rest.impl/${version}/jar</bundle>
+
+		<bundle>mvn:${groupId}/${artifactId}/${version}/jar</bundle>
+	</feature>
+</features>
