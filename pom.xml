@@ -20,8 +20,8 @@
 	<modules>
 		<module>rest.intf</module>
 		<module>logic.intf</module>
-		<module>rest.impl</module>
-		<module>logic.impl</module>
+		<module>rest.comp</module>
+		<module>logic.comp</module>
 		<module>osgi.asm</module>
 	</modules>
 

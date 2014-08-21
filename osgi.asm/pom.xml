@@ -32,12 +32,12 @@
 		</dependency>
 		<dependency>
 			<groupId>com.github.aucampia.jsw.test</groupId>
-			<artifactId>jsw.test.rest.impl</artifactId>
+			<artifactId>jsw.test.rest.comp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.aucampia.jsw.test</groupId>
-			<artifactId>jsw.test.logic.impl</artifactId>
+			<artifactId>jsw.test.logic.comp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

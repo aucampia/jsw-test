@@ -60,17 +60,17 @@ features:install -v com.github.aucampia.jsw.test.jsw.test.osgi.asm
 
 
 osgi:update com.github.aucampia.jsw.test.jsw.test.logic.intf/1.0.0.SNAPSHOT
-osgi:update com.github.aucampia.jsw.test.jsw.test.logic.impl/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.logic.comp/1.0.0.SNAPSHOT
 osgi:update com.github.aucampia.jsw.test.jsw.test.rest.intf/1.0.0.SNAPSHOT
-osgi:update com.github.aucampia.jsw.test.jsw.test.rest.impl/1.0.0.SNAPSHOT
+osgi:update com.github.aucampia.jsw.test.jsw.test.rest.comp/1.0.0.SNAPSHOT
 osgi:update com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
 
 osgi:refresh
 
 osgi:restart com.github.aucampia.jsw.test.jsw.test.logic.intf/1.0.0.SNAPSHOT
-osgi:restart com.github.aucampia.jsw.test.jsw.test.logic.impl/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.logic.comp/1.0.0.SNAPSHOT
 osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.intf/1.0.0.SNAPSHOT
-osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.impl/1.0.0.SNAPSHOT
+osgi:restart com.github.aucampia.jsw.test.jsw.test.rest.comp/1.0.0.SNAPSHOT
 osgi:restart com.github.aucampia.jsw.test.jsw.test.osgi.asm/1.0.0.SNAPSHOT
 
 osgi:list -s -t 0
@@ -82,4 +82,12 @@ cat ~/software/installations/apache-servicemix/data/log/servicemix.log{.2,.1,} |
 tail -F ~/software/installations/apache-servicemix/data/log/servicemix.log
 tail -F ~/software/installations/apache-servicemix/data/karaf.out
 tail -F ~/software/installations/apache-servicemix/data/log/wrapper.log
+----
+
+== Notes
+
+----
+ls */target/*.jar | xargs -I{} -t bsdtar -tvf {}
+ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
+
 ----

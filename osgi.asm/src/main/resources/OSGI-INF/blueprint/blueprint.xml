@@ -17,7 +17,7 @@
 	<bean
 		id="jsw-test.logic.bean"
 		activation="eager"
-		class="com.github.aucampia.jsw.test.logic.impl.TestServiceLogic"
+		class="com.github.aucampia.jsw.test.logic.comp.TestServiceLogic"
 		init-method="init"
 		destroy-method="destroy">
 	</bean>
@@ -25,7 +25,7 @@
 	<bean
 		id="jsw-test.rest.bean"
 		activation="eager"
-		class="com.github.aucampia.jsw.test.rest.impl.TestServiceRest"
+		class="com.github.aucampia.jsw.test.rest.comp.TestServiceRest"
 		init-method="init"
 		destroy-method="destroy">
 		<property name="logic" ref="jsw-test.logic.bean"/>

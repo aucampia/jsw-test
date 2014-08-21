@@ -11,8 +11,8 @@
 		<bundle dependency="true">mvn:${groupId}/jsw.test.logic.intf/${version}/jar</bundle>
 		<bundle dependency="true">mvn:${groupId}/jsw.test.rest.intf/${version}/jar</bundle>
 
-		<bundle dependency="true">mvn:${groupId}/jsw.test.logic.impl/${version}/jar</bundle>
-		<bundle dependency="true">mvn:${groupId}/jsw.test.rest.impl/${version}/jar</bundle>
+		<bundle dependency="true">mvn:${groupId}/jsw.test.logic.comp/${version}/jar</bundle>
+		<bundle dependency="true">mvn:${groupId}/jsw.test.rest.comp/${version}/jar</bundle>
 
 		<bundle>mvn:${groupId}/${artifactId}/${version}/jar</bundle>
 	</feature>
