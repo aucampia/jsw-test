@@ -107,6 +107,7 @@ curl 'http://127.0.0.1:10901/jsw-test.rest.jaxrs/test/info/1234'
 == Notes
 
 ----
+find */src -type f
 ls */target/*.jar | xargs -I{} -t bsdtar -tvf {}
 ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
 
