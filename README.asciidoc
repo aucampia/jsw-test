@@ -36,6 +36,12 @@ TestServiceRest o-- TestServiceLogic
 == Resources
 
 * link:https://github.com/apache/servicemix/tree/master/examples/cxf/cxf-jaxrs-blueprint[]
+* link:http://docs.oracle.com/javaee/6/tutorial/doc/[ The Java EE 6 Tutorial ]
+** link:http://docs.oracle.com/javaee/6/tutorial/doc/gjbnr.html[ Part V: Contexts and Dependency Injection for the Java EE Platform ]
+*** link:http://docs.oracle.com/javaee/6/tutorial/doc/giwhb.html[ Chapter 28: Introduction to Contexts and Dependency Injection for the Java EE Platform ]
+**** link:http://docs.oracle.com/javaee/6/tutorial/doc/gjbbk.html[ Using Scopes ]
+*** link:http://docs.oracle.com/javaee/6/tutorial/doc/gjbls.html[ Chapter 29: Running the Basic Contexts and Dependency Injection Examples ]
+* link:http://docs.oracle.com/javaee/7/api/[ Java(TM) EE 7 Specification APIs ]
 
 == ServiceMix
 
@@ -104,4 +110,10 @@ curl 'http://127.0.0.1:10901/jsw-test.rest.jaxrs/test/info/1234'
 ls */target/*.jar | xargs -I{} -t bsdtar -tvf {}
 ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
 
+----
+
+----
+mvn install
+mvn -f jsy.adapt/ jboss-as:deploy
+mvn -f ear.asm/ jboss-as:deploy
 ----

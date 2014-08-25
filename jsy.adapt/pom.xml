@@ -14,27 +14,38 @@
 
 	<groupId>com.github.aucampia.jsw.test</groupId>
 	<artifactId>jsw.test.jsy.adapt</artifactId>
-	<packaging>bundle</packaging>
+	<packaging>jar</packaging>
 
 	<properties>
 	</properties>
 
 	<dependencies>
+		<!--
 		<dependency>
 			<groupId>com.github.aucampia.jsw.test</groupId>
 			<artifactId>jsw.test.rest.comp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>com.github.aucampia.jsw.test</groupId>
 			<artifactId>jsw.test.logic.comp</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.2.Final</version>
+			</plugin>
 		</plugins>
 	</build>
 

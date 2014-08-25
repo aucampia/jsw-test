@@ -17,6 +17,7 @@ import javax.inject.Named;
 public class TestServiceLogic
 	extends com.github.aucampia.jsw.test.logic.comp.TestServiceLogic
 {
+
 	private static final Logger LOG = LoggerFactory.getLogger( TestServiceLogic.class );
 
 	@PostConstruct
@@ -32,4 +33,5 @@ public class TestServiceLogic
 		LOG.info( "jsw.test.jsy.adapt.TestServiceLogic.preDestroy: ..." );
 		super.destroy();
 	}
+
 }

@@ -24,6 +24,8 @@
 		<module>rest.comp</module>
 		<module>logic.comp</module>
 		<module>osgi.asm</module>
+		<module>jsy.adapt</module>
+		<module>ear.asm</module>
 	</modules>
 
 	<scm>
