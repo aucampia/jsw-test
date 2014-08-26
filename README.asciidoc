@@ -123,15 +123,17 @@ curl 'http://127.0.0.1:10901/jsw-test.rest.jaxrs/test/info/1234'
 find */src -type f
 ls */target/*.jar | xargs -I{} -t bsdtar -tvf {}
 ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
-
 ----
 
 ----
 mvn install
 mvn clean install
-mvn -f jsy.adapt/ jboss-as:deploy
-mvn -f ear.asm/ jboss-as:deploy
+
 mvn -f jas.test/ jboss-as:deploy
+mvn -f jas.test/ jboss-as:undeploy
+
+mvn -f ear.asm/ jboss-as:deploy
+mvn -f ear.asm/ jboss-as:undeploy
 ----
 
 

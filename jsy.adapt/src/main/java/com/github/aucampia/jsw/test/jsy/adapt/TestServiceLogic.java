@@ -37,17 +37,15 @@ public class TestServiceLogic
 	@PostConstruct
 	void postConstruct()
 	{
-		LOG.error( "jsw.test.jsy.adapt.TestServiceLogic.postConstruct: ..." );
+		LOG.info( "jsw.test.jsy.adapt.TestServiceLogic.postConstruct: ..." );
 		System.out.println( "jsw.test.jsy.adapt.TestServiceLogic.postConstruct: ..." );
-		String myString = null;
-		myString.length();
 		super.init();
 	}
 
 	@PreDestroy
 	void preDestroy()
 	{
-		LOG.error( "jsw.test.jsy.adapt.TestServiceLogic.preDestroy: ..." );
+		LOG.info( "jsw.test.jsy.adapt.TestServiceLogic.preDestroy: ..." );
 		System.out.println( "jsw.test.jsy.adapt.TestServiceLogic.preDestroy: ..." );
 		super.destroy();
 	}

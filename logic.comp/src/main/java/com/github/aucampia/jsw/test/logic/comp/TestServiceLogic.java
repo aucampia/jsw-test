@@ -21,11 +21,11 @@ public class TestServiceLogic
 
 	public void init()
 	{
-		LOG.error( "jsw.test.logic.comp.TestServiceLogic.init: ..." );
+		LOG.info( "jsw.test.logic.comp.TestServiceLogic.init: ..." );
 	}
 	
 	public void destroy()
 	{
-		LOG.error( "jsw.test.logic.comp.TestServiceLogic.destroy: ..." );
+		LOG.info( "jsw.test.logic.comp.TestServiceLogic.destroy: ..." );
 	}
 }
