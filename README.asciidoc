@@ -50,6 +50,12 @@ https://access.redhat.com/articles/626493
 https://access.redhat.com/articles/112673
 ----
 
+== Terms
+
+----
+JNDI : http://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface
+----
+
 == ServiceMix
 
 ----
@@ -122,8 +128,10 @@ ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
 
 ----
 mvn install
+mvn clean install
 mvn -f jsy.adapt/ jboss-as:deploy
 mvn -f ear.asm/ jboss-as:deploy
+mvn -f jas.test/ jboss-as:deploy
 ----
 
 

@@ -1,4 +1,4 @@
-package com.github.aucampia.jsw.test.jsy.adapt;
+package com.github.aucampia.jsw.test.jas.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,16 +36,14 @@ public class TestBean
 	@PostConstruct
 	void postConstruct()
 	{
-		LOG.error( "jsw.test.jas.test.TestBean.postConstruct: ..." );
+		LOG.info( "jsw.test.jas.test.TestBean.postConstruct: ..." );
 		System.out.println( "jsw.test.jas.test.TestBean.postConstruct: ..." );
-		String myString = null;
-		myString.length();
 	}
 
 	@PreDestroy
 	void preDestroy()
 	{
-		LOG.error( "jsw.test.jas.test.TestBean.preDestroy: ..." );
+		LOG.info( "jsw.test.jas.test.TestBean.preDestroy: ..." );
 		System.out.println( "jsw.test.jas.test.TestBean.preDestroy: ..." );
 	}
 
