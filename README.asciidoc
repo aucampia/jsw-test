@@ -43,6 +43,13 @@ TestServiceRest o-- TestServiceLogic
 *** link:http://docs.oracle.com/javaee/6/tutorial/doc/gjbls.html[ Chapter 29: Running the Basic Contexts and Dependency Injection Examples ]
 * link:http://docs.oracle.com/javaee/7/api/[ Java(TM) EE 7 Specification APIs ]
 
+----
+## dump
+https://docs.jboss.org/author/display/AS71/Class+Loading+in+AS7#ClassLoadinginAS7-JBossDeploymentStructureFile
+https://access.redhat.com/articles/626493
+https://access.redhat.com/articles/112673
+----
+
 == ServiceMix
 
 ----
@@ -118,3 +125,37 @@ mvn install
 mvn -f jsy.adapt/ jboss-as:deploy
 mvn -f ear.asm/ jboss-as:deploy
 ----
+
+
+----
+...@...:~/projects/github/wildfly/quickstart
+$ grep -ri --include=pom.xml '<packaging>ear</packaging>' ./
+./kitchensink-ml-ear/wildfly-kitchensink-ml-ear-ear/pom.xml:    <packaging>ear</packaging>
+./kitchensink-ear/wildfly-kitchensink-ear-ear/pom.xml:    <packaging>ear</packaging>
+./ejb-in-ear/ear/pom.xml:    <packaging>ear</packaging>
+./ejb-multi-server/app-two/ear/pom.xml:    <packaging>ear</packaging>
+./ejb-multi-server/app-main/ear/pom.xml:    <packaging>ear</packaging>
+./ejb-multi-server/app-one/ear/pom.xml:    <packaging>ear</packaging>
+./app-client/ear/pom.xml:    <packaging>ear</packaging>
+./ejb-throws-exception/ear/pom.xml:    <packaging>ear</packaging>
+./wicket-ear/ear/pom.xml:    <packaging>ear</packaging>
+----
+
+----
+./bin/standalone.sh --debug 10878
+
+http://docs.oracle.com/javase/7/docs/technotes/tools/solaris/jdb.html
+
+jdb -attach 10878
+
+stop in com.github.aucampia.jsw.test.logic.comp.TestServiceLogic.postConstruct
+----
+
+== Problem statement
+
+----
+# expected behaviour
+
+----
+
+

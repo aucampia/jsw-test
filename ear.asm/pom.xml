@@ -31,6 +31,7 @@
 			<groupId>com.github.aucampia.jsw.test</groupId>
 			<artifactId>jsw.test.jsy.adapt</artifactId>
 			<version>${project.version}</version>
+			<type>ejb</type>
 			<exclusions>
 				<exclusion>
 					<groupId>*</groupId>
@@ -77,12 +78,14 @@
 					<fileNameMapping>no-version</fileNameMapping>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
-						<jarModule>
+						<ejbModule>
 							<groupId>com.github.aucampia.jsw.test</groupId>
 							<artifactId>jsw.test.jsy.adapt</artifactId>
+							<!--
 							<includeInApplicationXml>true</includeInApplicationXml>
-							<bundleDir>./</bundleDir>
-						</jarModule>
+							-->
+							<bundleDir>/</bundleDir>
+						</ejbModule>
 					</modules>
 				</configuration>
 			</plugin>

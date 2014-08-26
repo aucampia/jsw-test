@@ -43,11 +43,11 @@ public class TestServiceRest
 
 	public void init()
 	{
-		LOG.info( "jsw.test.rest.comp.TestServiceRest.init: ..." );
+		LOG.error( "jsw.test.rest.comp.TestServiceRest.init: ..." );
 	}
 
 	public void destroy()
 	{
-		LOG.info( "jsw.test.rest.comp.TestServiceRest.destroy: ..." );
+		LOG.error( "jsw.test.rest.comp.TestServiceRest.destroy: ..." );
 	}
 }

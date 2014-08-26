@@ -26,6 +26,7 @@
 		<module>osgi.asm</module>
 		<module>jsy.adapt</module>
 		<module>ear.asm</module>
+		<module>jas.test</module>
 	</modules>
 
 	<scm>
