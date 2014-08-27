@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<switchyard xmlns="urn:switchyard-config:switchyard:1.1"
+	xmlns:bean="urn:switchyard-component-bean:config:1.1" xmlns:bpm="urn:switchyard-component-bpm:config:1.1"
+	xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912" xmlns:soap="urn:switchyard-component-soap:config:1.1"
+	xmlns:rest="urn:switchyard-component-resteasy:config:1.1" xmlns:xform="urn:switchyard-config:transform:1.1">
+	<sca:composite name="TestServiceComposite" targetNamespace="urn:jsw-test:etc.jsy:1.0">
+		<sca:component name="TestServiceLogicComponent">
+			<bean:implementation.bean class="com.github.aucampia.jsw.test.jsy.adapt.TestServiceLogic"/>
+			<sca:service name="TestServiceLogic">
+				<sca:interface.java interface="com.github.aucampia.jsw.test.logic.intf.TestServiceLogicInterface"/>
+			</sca:service>
+			<sca:property name="name" type="xsd:string">Mikki Ilola</sca:property>
+			<sca:property name="gender" type="xsd:string">male</sca:property>
+		</sca:component>
+	</sca:composite>
+</switchyard>
+
