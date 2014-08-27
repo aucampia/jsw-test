@@ -40,6 +40,11 @@
 			<artifactId>javaee-api</artifactId>
 			<version>6.0</version>
 		</dependency>
+        <dependency>
+            <groupId>org.switchyard.components</groupId>
+            <artifactId>switchyard-component-bean</artifactId>
+            <version>1.1.1-p5-redhat-1</version>
+        </dependency>
 	</dependencies>
 
 	<build>

@@ -48,6 +48,8 @@ TestServiceRest o-- TestServiceLogic
 https://docs.jboss.org/author/display/AS71/Class+Loading+in+AS7#ClassLoadinginAS7-JBossDeploymentStructureFile
 https://access.redhat.com/articles/626493
 https://access.redhat.com/articles/112673
+http://docs.oasis-open.org/opencsa/sca-j/javadoc/index.html
+https://www.oasis-open.org/committees/download.php/44090/sca-assembly-spec-v1.1-csprd04.zip
 ----
 
 == Terms
@@ -123,6 +125,7 @@ curl 'http://127.0.0.1:10901/jsw-test.rest.jaxrs/test/info/1234'
 find */src -type f
 ls */target/*.jar | xargs -I{} -t bsdtar -tvf {}
 ls */target/*.jar | xargs -I{} -t bsdtar -xvf {} -O META-INF/MANIFEST.MF
+ls */target/*.ear | xargs -I{} -t bsdtar -tvf {}
 ----
 
 ----

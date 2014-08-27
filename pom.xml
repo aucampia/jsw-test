@@ -23,9 +23,13 @@
 		<module>logic.intf</module>
 		<module>rest.comp</module>
 		<module>logic.comp</module>
+
 		<module>osgi.asm</module>
+
 		<module>jsy.adapt</module>
+		<module>jsy.etc</module>
 		<module>ear.asm</module>
+
 		<module>jas.test</module>
 	</modules>
 

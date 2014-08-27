@@ -19,6 +19,26 @@ public class TestServiceLogic
 		return info;
 	}
 
+	private String name = "Kyosti Putkonen";
+	public String getName()
+	{
+		return this.name;
+	}
+	public void setName( String name )
+	{
+		this.name = name;
+	}
+
+	private String gender = "male";
+	public String getGender()
+	{
+		return this.gender;
+	}
+	public void setGender( String gender )
+	{
+		this.gender = gender;
+	}
+
 	public void init()
 	{
 		LOG.info( "jsw.test.logic.comp.TestServiceLogic.init: ..." );

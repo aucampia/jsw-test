@@ -20,20 +20,21 @@
 	</properties>
 
 	<dependencies>
-		<!--
-		<dependency>
-			<groupId>com.github.aucampia.jsw.test</groupId>
-			<artifactId>jsw.test.rest.comp</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>com.github.aucampia.jsw.test</groupId>
 			<artifactId>jsw.test.jsy.adapt</artifactId>
 			<version>${project.version}</version>
-			<!--
-			<type>ejb</type>
-			-->
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.aucampia.jsw.test</groupId>
+			<artifactId>jsw.test.jsy.etc</artifactId>
+			<version>${project.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>*</groupId>
@@ -83,6 +84,12 @@
 						<jarModule>
 							<groupId>com.github.aucampia.jsw.test</groupId>
 							<artifactId>jsw.test.jsy.adapt</artifactId>
+							<includeInApplicationXml>true</includeInApplicationXml>
+							<bundleDir>/</bundleDir>
+						</jarModule>
+						<jarModule>
+							<groupId>com.github.aucampia.jsw.test</groupId>
+							<artifactId>jsw.test.jsy.etc</artifactId>
 							<includeInApplicationXml>true</includeInApplicationXml>
 							<bundleDir>/</bundleDir>
 						</jarModule>
