@@ -154,16 +154,6 @@ $ grep -ri --include=pom.xml '<packaging>ear</packaging>' ./
 ./wicket-ear/ear/pom.xml:    <packaging>ear</packaging>
 ----
 
-----
-./bin/standalone.sh --debug 10878
-
-http://docs.oracle.com/javase/7/docs/technotes/tools/solaris/jdb.html
-
-jdb -attach 10878
-
-stop in com.github.aucampia.jsw.test.logic.comp.TestServiceLogic.postConstruct
-----
-
 == Problem statement
 
 ----
